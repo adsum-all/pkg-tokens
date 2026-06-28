@@ -1,0 +1,36 @@
+{
+  "name": "@adsum/tokens",
+  "version": "0.1.0",
+  "description": "ADSUM design tokens (single source from 02-design-system): colors, typography, spacing, light and dark themes.",
+  "license": "UNLICENSED",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc -p tsconfig.build.json && node scripts/emit-css.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.1"
+  },
+  "publishConfig": {
+    "@adsum:registry": "https://gitlab.com/api/v4/projects/83849937/packages/npm/"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
